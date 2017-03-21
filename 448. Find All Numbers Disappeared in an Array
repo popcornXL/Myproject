@@ -1,0 +1,22 @@
+public class Solution {
+    public List<Integer> findDisappearedNumbers(int[] nums) {
+        List<Integer> slist =new LinkedList<>();
+        for(int i=0;i<nums.length;i++)
+        {
+             int ans=Math.abs(nums[i])-1;
+             if(nums[ans]>0)
+             {
+                nums[ans] = -nums[ans];
+             }
+        
+        }
+        for(int i=0;i<nums.length;i++)
+        {
+            if(nums[i]>0)
+            {
+                slist.add(i+1);
+            }
+        }
+        return slist;
+    }
+}
