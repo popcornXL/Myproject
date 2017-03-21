@@ -5,6 +5,7 @@
   *The maximum number of consecutive 1s is 3.
   **/
   
+ //自己 
   public class Solution {
     public int findMaxConsecutiveOnes(int[] nums) {
         HashMap<Integer,Integer> hs=new HashMap<>();
@@ -29,5 +30,23 @@
 		}
 	    int ans=hs.get(1);
 	    return ans;
+    }
+}
+
+// solution
+public class Solution {
+    public int findMaxConsecutiveOnes(int[] nums) {
+        int result = 0, count = 0;
+	        for (int n : nums)
+	        	if(n ==1)
+	        	{
+	        		count++;
+	        		result=Math.max(result, count);
+	        	}
+	        	else
+	        	{
+	        		count=0;
+	        	}
+	        	return result;
     }
 }
