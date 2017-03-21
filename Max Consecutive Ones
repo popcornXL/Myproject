@@ -33,7 +33,7 @@
     }
 }
 
-// solution
+// solution  point 為 Math.max
 public class Solution {
     public int findMaxConsecutiveOnes(int[] nums) {
         int result = 0, count = 0;
