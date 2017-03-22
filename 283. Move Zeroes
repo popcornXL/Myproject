@@ -1,0 +1,40 @@
+// 自己
+public class Solution {
+    public void moveZeroes(int[] nums) {
+       List<Integer> slist =new LinkedList<>();
+		  for(int a : nums)
+		  slist.add(a);
+		  int count=0;
+		  int g=slist.size();
+	        for(int i=0;i<g;i++)
+	        {
+	        	   if(slist.get(i) == 0)
+	        	   {
+	        		   slist.remove(i);
+	        		   --g;
+	        		   --i;
+	        		   count++;
+	        		   
+	        	   }
+	        }
+	        for(int j=0;j<count;j++)
+	        {
+	        	slist.add(0);
+	        }
+	       for(int h=0;h<slist.size();h++)
+	        nums[h]=slist.get(h);
+    }
+}
+//solution
+public void moveZeroes(int[] nums) {
+
+    int j = 0;
+    for(int i = 0; i < nums.length; i++) {
+        if(nums[i] != 0) {
+            int temp = nums[j];
+            nums[j] = nums[i];
+            nums[i] = temp;
+            j++;
+        }
+    }
+}
