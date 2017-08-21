@@ -36,28 +36,23 @@ class Solution {
 
 class Solution {
     public int maxProfit(int[] prices) {
-          if (prices == null || prices.length < 1) {
-            return 0;
-        }
-        int min = prices[0]; //買入
-        int profit = 0; //利潤
-
-        for (int i = 1; i < prices.length; i++) {//買入價
-            // 找更低的買入價
-            if (min > prices[i]) {
-                // 更新買入
-                min = prices[i];
-            } 
-            // 價格不低於買入
-            else {
-                // 賣出大於買入
-                if (profit < prices[i] - min) {
-                    // 更新賣出
-                    profit = prices[i] - min;
-                } 
+          if(prices.length<1||prices==null){
+              return 0;
+          }
+        int buy=prices[0];//買入價格
+        int money=0;//利潤
+        for(int i=1;i<prices.length;i++)
+        {
+            if(buy>prices[i]){
+                buy=prices[i];//更新買入價格
+            }
+            else{
+                if(money<prices[i]-buy) //利潤小於價差
+                {
+                    money=prices[i]-buy;//更新利潤
+                }
             }
         }
-
-        return profit;
+        return money;
     }
 }
