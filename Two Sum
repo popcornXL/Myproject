@@ -7,11 +7,11 @@ public class Solution {
     public int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> tracker = new HashMap<Integer, Integer>();
         for(int i = 0; i <  nums.length; i++){
-            if(tracker.containsKey(nums[i])){
-                int left = tracker.get(nums[i]);
+            if(tracker.containsKey(nums[i])){//key
+                int left = tracker.get(nums[i]);//value
                 return new int[]{left, i};
             }else{
-                tracker.put(target - nums[i], i);
+                tracker.put(target - nums[i], i);//key=target-nums[i], value=指標
             }
         }
         return new int[2];
