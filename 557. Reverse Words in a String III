@@ -1,0 +1,24 @@
+class Solution {
+    public String reverseWords(String s) {
+        char[] s1=s.toCharArray();
+        int j=0;//begin
+        for(int i=0;i<s1.length;i++){
+            if(s1[i] == ' '){//遇到空白時
+              reverse(s1,j,i-1);
+              j=i+1;//下次開始時
+            }
+        }
+    reverse(s1, j, s1.length - 1); //最後一個空白後要處理的字串
+    return new String(s1);
+    }
+    
+    public void reverse(char[] s ,int l,int r){
+        while(l<r){
+            char ss=s[l];
+            s[l]=s[r];
+            s[r]=ss;
+            l++;//頭
+            r--;//尾
+        }
+    }
+}
